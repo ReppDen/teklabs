@@ -19,4 +19,9 @@ public class FizzBuzzController {
         return fizzBuzzService.play(number);
     }
 
+    @RequestMapping("/multiple")
+    public String fizzBuzzMultiple(@RequestParam(name = "numbers[]", required = true) Long[] numbers) {
+        return fizzBuzzService.play(numbers);
+    }
+
 }

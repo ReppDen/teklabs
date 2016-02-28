@@ -7,6 +7,7 @@ public class FizzBuzzConstansProvider implements ConstantsProvider {
     private static final String FIZZ = "Fizz";
     private static final String BUZZ = "Buzz";
     private static final String FIZZBUZZ = "FizzBuzz";
+    private static final String SEPARATOR = " ";
 
     @Override
     public long getFirstDivider() {
@@ -31,5 +32,10 @@ public class FizzBuzzConstansProvider implements ConstantsProvider {
     @Override
     public String getFizzBuzzWord() {
         return FIZZBUZZ;
+    }
+
+    @Override
+    public String getSeparator() {
+        return SEPARATOR;
     }
 }
