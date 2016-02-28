@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -27,6 +27,12 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
             </ul>
+            <p class="navbar-text navbar-right"  id="userInfo">
+                Signed in as <span id="username"></span> <a href="/logout" class="navbar-link">Logout</a>
+            </p>
+            <p class="navbar-text navbar-right pleaseLogin">
+               Please login via <a href="/login">GitHub</a>
+            </p>
         </div>
         <!-- /.navbar-collapse -->
     </div>
@@ -36,6 +42,13 @@
     <p> Hi! This is a simple which allow you play <a href="https://en.wikipedia.org/wiki/Fizz_buzz">FizzBuzz</a> game
     </p>
 
+
+    <div class="pleaseLogin">
+       To access the service you have to login first!
+        <div>
+            With Github: <a href="/login">click here</a>
+        </div>
+    </div>
     <h3>Let's play!</h3>
 
     <form>

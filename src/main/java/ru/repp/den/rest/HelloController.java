@@ -1,7 +1,14 @@
 package ru.repp.den.rest;
 
+import org.springframework.security.core.context.SecurityContextHolder;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.ResponseBody;
+import org.springframework.web.servlet.ModelAndView;
+
+import java.security.Principal;
+import java.util.LinkedHashMap;
+import java.util.Map;
 
 @Controller
 public class HelloController {
@@ -9,5 +16,13 @@ public class HelloController {
     @RequestMapping("/")
     public String home() {
         return "index";
+    }
+
+    @RequestMapping({ "/me" })
+    @ResponseBody
+    public Map<String, Object> user(Principal principal) {
+        Map<String, Object> m = new LinkedHashMap<>();
+        m.put("username",principal.getName());
+        return m;
     }
 }
