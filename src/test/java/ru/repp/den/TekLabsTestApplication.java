@@ -13,7 +13,7 @@ import ru.repp.den.service.FizzBuzzService;
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TekLabsApplication.class)
 @WebAppConfiguration
-public class TestClass {
+public class TekLabsTestApplication {
 
     @Autowired
     FizzBuzzService fizzBuzzService;
@@ -41,10 +41,6 @@ public class TestClass {
 
         Assert.assertEquals(result, cp.getFizzBuzzWord());
     }
-
-//	@Test
-//	public void contextLoads() {
-//	}
 
 }
 
