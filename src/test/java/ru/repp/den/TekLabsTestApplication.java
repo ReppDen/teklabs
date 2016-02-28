@@ -9,7 +9,6 @@ import org.springframework.boot.autoconfigure.security.SecurityAutoConfiguration
 import org.springframework.boot.test.SpringApplicationConfiguration;
 import org.springframework.boot.test.WebIntegrationTest;
 import org.springframework.test.context.junit4.SpringJUnit4ClassRunner;
-import org.springframework.test.context.web.WebAppConfiguration;
 import ru.repp.den.constants.ConstantsProvider;
 import ru.repp.den.exception.BadRequestException;
 import ru.repp.den.exception.ExceptionHandlingController;
@@ -19,7 +18,7 @@ import java.util.stream.Stream;
 
 @RunWith(SpringJUnit4ClassRunner.class)
 @SpringApplicationConfiguration(classes = TekLabsApplication.class)
-@EnableAutoConfiguration(exclude = { SecurityAutoConfiguration.class, ExceptionHandlingController.class})
+@EnableAutoConfiguration(exclude = {SecurityAutoConfiguration.class, ExceptionHandlingController.class})
 @WebIntegrationTest
 public class TekLabsTestApplication {
 
@@ -30,7 +29,7 @@ public class TekLabsTestApplication {
     @Test
     public void testNotFizz() {
         ConstantsProvider cp = fizzBuzzService.getConstantsProvider();
-        Long number = cp.getFirstDivider()-1;
+        Long number = cp.getFirstDivider() - 1;
         String result = fizzBuzzService.play(number);
 
         Assert.assertNotEquals(result, cp.getFizzWord());
@@ -39,7 +38,7 @@ public class TekLabsTestApplication {
     @Test
     public void testNotBuzz() {
         ConstantsProvider cp = fizzBuzzService.getConstantsProvider();
-        Long number = cp.getSecondDivider()-1;
+        Long number = cp.getSecondDivider() - 1;
         String result = fizzBuzzService.play(number);
 
         Assert.assertNotEquals(result, cp.getBuzzWord());
@@ -48,7 +47,7 @@ public class TekLabsTestApplication {
     @Test
     public void testNotFizzBuzz() {
         ConstantsProvider cp = fizzBuzzService.getConstantsProvider();
-        Long number = cp.getFirstDivider() * cp.getSecondDivider()-1;
+        Long number = cp.getFirstDivider() * cp.getSecondDivider() - 1;
         String result = fizzBuzzService.play(number);
 
         Assert.assertNotEquals(result, cp.getFizzBuzzWord());
@@ -81,7 +80,7 @@ public class TekLabsTestApplication {
     @Test
     public void testFizzAdv() {
         final ConstantsProvider cp = fizzBuzzService.getConstantsProvider();
-        Long[] arr = new Long[] {1L,2L,cp.getFirstDivider(), 3L, cp.getSecondDivider(),5L, 6L,cp.getFirstDivider() * cp.getSecondDivider(), 15L };
+        Long[] arr = new Long[]{1L, 2L, cp.getFirstDivider(), 3L, cp.getSecondDivider(), 5L, 6L, cp.getFirstDivider() * cp.getSecondDivider(), 15L};
         String result = fizzBuzzService.play(arr);
 
         String[] splitterRes = result.split(cp.getSeparator());
@@ -98,7 +97,7 @@ public class TekLabsTestApplication {
     public void testNoGame() {
         try {
             fizzBuzzService.play((Long) null);
-        }catch (Exception e) {
+        } catch (Exception e) {
             Assert.assertTrue(e.getClass().equals(BadRequestException.class));
         }
     }
@@ -107,7 +106,7 @@ public class TekLabsTestApplication {
     public void testNoGameAdv() {
         try {
             fizzBuzzService.play((Long[]) null);
-        }catch (Exception e) {
+        } catch (Exception e) {
             Assert.assertTrue(e.getClass().equals(BadRequestException.class));
         }
     }

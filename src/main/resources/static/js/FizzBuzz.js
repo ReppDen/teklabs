@@ -21,7 +21,7 @@ $(document).ready(function () {
                 message = "Please login first!";
                 break;
             case 400:
-               message = "Incorrect value passed to backend! Make sure that you enter only numbers";
+                message = "Incorrect value passed to backend! Make sure that you enter only numbers";
                 break;
         }
 
@@ -29,7 +29,7 @@ $(document).ready(function () {
             message += " " + res.reponseJSON.message;
         }
 
-        $("#"+elemId).text(message);
+        $("#" + elemId).text(message);
     }
 
     jQuery.ajax({
@@ -60,7 +60,7 @@ $(document).ready(function () {
                 $("#response").text(res);
             },
             error: function (res) {
-                handleRestErrorForPrettyText(res,"response");
+                handleRestErrorForPrettyText(res, "response");
             }
         });
     });
@@ -81,7 +81,7 @@ $(document).ready(function () {
 
     $("#playMultipleButton").click(function () {
         var arrayOfLines = $('#fizzBuzzNumberMultiple').val().split('\n');
-        $.each(arrayOfLines, function(i,v) {
+        $.each(arrayOfLines, function (i, v) {
             v = v.trim();
         });
         if (!arrayOfLines) {

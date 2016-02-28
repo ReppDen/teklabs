@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org">
+<html xmlns="http://www.w3.org/1999/xhtml">
 <head>
     <meta charset="utf-8"/>
     <meta http-equiv="X-UA-Compatible" content="IE=edge"/>
@@ -29,11 +29,12 @@
             <ul class="nav navbar-nav">
                 <li class="active"><a href="/">Home</a></li>
             </ul>
-            <p class="navbar-text navbar-right"  id="userInfo">
-                Signed in as <span id="username"></span> <button id="logout" class="btn btn-default">Logout</button>
+            <p class="navbar-text navbar-right" id="userInfo">
+                Signed in as <span id="username"></span>
+                <button id="logout" class="btn btn-default">Logout</button>
             </p>
             <p class="navbar-text navbar-right pleaseLogin">
-               Please login via <a href="/login">GitHub</a>
+                Please login via <a href="/login">GitHub</a>
             </p>
         </div>
     </div>
@@ -44,7 +45,7 @@
 
 
     <div class="pleaseLogin">
-       To access the service you have to login first!
+        To access the service you have to login first!
         <div>
             With Github: <a href="/login">click here</a>
         </div>
@@ -62,15 +63,18 @@
     </form>
 
     <h3>Advanced game</h3>
+
     <p>
         Enter a number in each row if text area below. One row one number.
         There is no game with invalid rows. It is a fair game :-)
     </p>
+
     <form>
         <div class="form-group">
             <label for="fizzBuzzNumberMultiple">Enter number</label>
             <!--<input type="number" class="form-control medium-size" id="fizzBuzzNumber" placeholder="Enter number"/>-->
             <textarea class="form-control medium-size" id="fizzBuzzNumberMultiple"></textarea>
+
             <div>Response is:<span id="responseMultiple"></span></div>
         </div>
         <button type="button" id="playMultipleButton" class="btn btn-default">Play!</button>

@@ -16,11 +16,11 @@ public class HelloController {
         return "index";
     }
 
-    @RequestMapping({ "/me" })
+    @RequestMapping({"/me"})
     @ResponseBody
     public Map<String, Object> user(Principal principal) {
         Map<String, Object> m = new LinkedHashMap<>();
-        m.put("username",principal.getName());
+        m.put("username", principal.getName());
         return m;
     }
 }
