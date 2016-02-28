@@ -1,1 +1,1 @@
-web: java -jar target/teklabs-0.0.1-SNAPSHOT.jar
+web: java -Dserver.port=$PORT -jar target/teklabs-0.0.1-SNAPSHOT.jar
