@@ -26,7 +26,7 @@ $(document).ready(function () {
         }
 
         if (res.responseJSON) {
-            message += " " + res.reponseJSON.message;
+            message += " " + res.responseJSON.message;
         }
 
         $("#" + elemId).text(message);
@@ -45,6 +45,7 @@ $(document).ready(function () {
 
 
     $("#playButton").click(function () {
+        $("#response").text("");
         var number = $("#fizzBuzzNumber").val();
         if (!number) {
             $("#response").text("Please enter the number");
@@ -65,24 +66,15 @@ $(document).ready(function () {
         });
     });
 
-    $("#logout").click(function () {
-        jQuery.ajax({
-            type: "POST",
-            url: "/logout",
-            success: function (res) {
-                handleAuthentication(false)
-            },
-            error: function (res) {
-                console.log("Logout failed", res);
-                handleAuthentication(false);
-            }
-        });
-    });
-
     $("#playMultipleButton").click(function () {
+        $("#responseMultiple").text("");
         var arrayOfLines = $('#fizzBuzzNumberMultiple').val().split('\n');
+        var inputArray = [];
         $.each(arrayOfLines, function (i, v) {
             v = v.trim();
+            if (v) {
+                inputArray.push(v);
+            }
         });
         if (!arrayOfLines) {
             $("#responseMultiple").text("Please enter the number");
@@ -92,7 +84,7 @@ $(document).ready(function () {
             type: "GET",
             url: "/fizzbuzz/multiple",
             data: {
-                numbers: arrayOfLines
+                numbers: inputArray
             },
             success: function (res) {
                 $("#responseMultiple").text(res);

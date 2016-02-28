@@ -16,6 +16,6 @@ public class SsoConfig extends WebSecurityConfigurerAdapter {
                 .antMatchers("/", "/login**", "/js/**", "/css/**")
                 .permitAll()
                 .anyRequest()
-                .authenticated().and().logout().logoutSuccessUrl("/");
+                .authenticated();
     }
 }
