@@ -37,7 +37,7 @@ public class TekLabsTestApplication {
     @Test
     public void testFizzBuzz() {
         ConstantsProvider cp = fizzBuzzService.getConstantsProvider();
-        String result = fizzBuzzService.play(cp.getSecondDivider() * cp.getSecondDivider());
+        String result = fizzBuzzService.play(cp.getFirstDivider() * cp.getSecondDivider());
 
         Assert.assertEquals(result, cp.getFizzBuzzWord());
     }
